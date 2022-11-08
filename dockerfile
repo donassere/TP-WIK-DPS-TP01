@@ -1,15 +1,15 @@
-FROM debian:9
-
-RUN apt-get update -yq \
-&& apt-get install curl gnupg -yq \
-&& curl -sL https://deb.nodesource.com/setup_10.x | bash \
-&& apt-get install nodejs -yq \
-&& apt-get clean -y
-
-ADD . ../TP-WIK-DPS-TP01/
-
+FROM node:19-bullseye
 WORKDIR /TP-WIK-DPS-TP01
 
+COPY package*.json ./
 RUN npm install
 
-CMD npm run start
+COPY tsconfig.json ./
+COPY src ./src
+run npx tsc
+
+RUN adduser --no-create-home --group --disabled-login --system www
+RUN chown www -R /TP-WIK-DPS-TP01
+USER www
+
+CMD node build/app.js

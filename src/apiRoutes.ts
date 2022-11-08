@@ -12,6 +12,8 @@ export class ApiRoutes extends RoutesConfig {
     this.app
       .route("/ping")
       .get((req: express.Request, res: express.Response) => {
+        const os = require('os');
+        console.log(os.hostname());
         res.send(`GET Request successful!`);
       });
     return this.app;
