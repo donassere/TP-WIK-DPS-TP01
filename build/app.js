@@ -32,6 +32,7 @@ const apiRoutes_1 = require("./apiRoutes");
 const app = (0, express_1.default)();
 const server = http.createServer(app);
 const port = process.env.PING_LISTEN_PORT || 3000;
+/* "start": "tsc && PING_LISTEN_PORT=8686 node ./build/app.js", <= in tsconfig scripts but it doesnt work */
 const routes = [];
 app.use(express_1.default.json());
 routes.push(new apiRoutes_1.ApiRoutes(app));

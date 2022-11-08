@@ -12,11 +12,19 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.14",
-    "@types/node": "^18.8.1",
+    "@types/node": "^18.8.2",
     "@types/node-fetch": "^2.6.2",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "express": "^4.18.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donassere/TP-WIK-DPS-TP01.git"
+  },
+  "bugs": {
+    "url": "https://github.com/donassere/TP-WIK-DPS-TP01/issues"
+  },
+  "homepage": "https://github.com/donassere/TP-WIK-DPS-TP01#readme"
 }
